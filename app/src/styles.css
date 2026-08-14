@@ -246,11 +246,14 @@ main { display: grid; place-items: center; min-height: calc(100vh - 110px); }
 .result-cart { position: relative; padding-top: 42px; text-align: center; }
 .price-sign { position: absolute; z-index: 2; top: 0; left: 50%; min-width: 76px; padding: 7px 12px; border: 3px solid #fff2d6; border-radius: 8px; color: #fff; background: var(--coffee-dark); box-shadow: 0 6px 12px rgba(0,0,0,.18); font-size: 1.45rem; font-weight: 950; transform: translateX(-50%); }
 .price-sign.low { color: var(--coffee-dark); background: var(--gold); }
-.cup-count { display: inline-block; margin-top: 10px; padding: 6px 10px; border-radius: 999px; color: var(--coffee-dark); background: rgba(255,255,255,.75); font-size: .82rem; font-weight: 900; }
+.result-player-name { display: block; margin-top: 11px; color: var(--coffee-dark); font-size: 1.05rem; line-height: 1.15; overflow-wrap: anywhere; }
+.cup-count { display: inline-block; margin-top: 6px; padding: 6px 10px; border-radius: 999px; color: var(--coffee-dark); background: rgba(255,255,255,.75); font-size: .82rem; font-weight: 900; }
 .result-body { padding: clamp(24px,5vw,56px); }
 .profit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-bottom: 36px; }
 .profit-card { padding: 20px; border: 1px solid rgba(91,51,37,.1); border-radius: 20px; background: #fff; }
-.cart-name { color: var(--muted); font-size: .8rem; font-weight: 950; letter-spacing: .09em; text-transform: uppercase; }
+.cart-name { display: flex; flex-direction: column; gap: 3px; }
+.cart-name strong { color: var(--ink); font-size: 1rem; line-height: 1.15; overflow-wrap: anywhere; }
+.cart-name small { color: var(--muted); font-size: .72rem; font-weight: 950; letter-spacing: .09em; text-transform: uppercase; }
 .profit { margin: 5px 0 12px; color: var(--mint-dark); font-size: 2.6rem; font-weight: 800; line-height: 1; }
 .profit-card.loss .profit { color: var(--coral); }
 .math-line { display: flex; justify-content: space-between; gap: 8px; padding: 5px 0; border-top: 1px dashed rgba(91,51,37,.13); color: var(--muted); font-size: .88rem; }
@@ -329,6 +332,7 @@ main { display: grid; place-items: center; min-height: calc(100vh - 110px); }
   .result-cart .wheel.left { left: 15px; }
   .result-cart .wheel.right { right: 15px; }
   .price-sign { min-width: 58px; font-size: 1rem; }
+  .result-player-name { font-size: .86rem; }
   .cup-count { font-size: .68rem; }
   .comparison { grid-template-columns: 1fr; }
   .table-scroll { overflow-x: auto; }
@@ -343,4 +347,3 @@ main { display: grid; place-items: center; min-height: calc(100vh - 110px); }
     transition-duration: .01ms !important;
   }
 }
-

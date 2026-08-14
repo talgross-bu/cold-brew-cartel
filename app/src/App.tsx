@@ -118,7 +118,6 @@ function Landing({
                   spellCheck={false}
                   maxLength={12}
                   required
-                  placeholder="MAPLE"
                 />
               </label>
             )}
@@ -379,10 +378,12 @@ function Result({ state, pending, action }: ScreenProps) {
         <div className="result-carts">
           {CARTS.map((cart) => {
             const data = calculated.carts[cart];
+            const playerName = state.players.find((player) => player.cart === cart)?.displayName ?? `Cart ${cart}`;
             return (
               <article className="result-cart" key={cart} style={{ "--cart-color": CART_COLORS[cart] } as CSSProperties}>
                 <div className={`price-sign ${data.price === 3 ? "low" : ""}`}>${data.price}</div>
                 <CartIcon cart={cart} />
+                <strong className="result-player-name">{playerName}</strong>
                 <span className="cup-count">{data.quantity} cups sold</span>
               </article>
             );
@@ -393,9 +394,10 @@ function Result({ state, pending, action }: ScreenProps) {
         <div className="profit-grid">
           {CARTS.map((cart) => {
             const data = calculated.carts[cart];
+            const playerName = state.players.find((player) => player.cart === cart)?.displayName ?? `Cart ${cart}`;
             return (
               <article className={`profit-card ${data.profit < 0 ? "loss" : ""}`} key={cart}>
-                <span className="cart-name">Cart {cart} register</span>
+                <span className="cart-name"><strong>{playerName}</strong><small>Cart {cart} register</small></span>
                 <div className="profit">{money(data.profit)}</div>
                 <div className="math-line"><span>Revenue</span><strong>{money(data.revenue)}</strong></div>
                 <div className="math-line"><span>Opening + cup costs</span><strong>−{money(data.cost)}</strong></div>
