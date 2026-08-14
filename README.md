@@ -2,6 +2,8 @@
 
 A synchronized, three-player classroom pricing game. One student creates a room as the spokesperson, shares a simple word code, and controls the teaching flow. The three carts make private price choices on separate devices and Supabase reveals the combined market outcome.
 
+**Live game:** https://talgross-bu.github.io/cold-brew-cartel/
+
 The original single-browser game remains at `index.html`. The multiplayer React application is in `app/`; the Supabase backend is in `supabase/`.
 
 ## Architecture
@@ -57,4 +59,3 @@ Before the first deployment:
 3. Push `main`, or run **Test and deploy game** manually from the Actions tab.
 
 No Supabase secret key is stored in the repository or sent to students. The project URL and publishable key are public connection identifiers; database authorization is enforced by Auth, RPC checks, grants, and RLS.
-
