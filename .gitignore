@@ -1,0 +1,9 @@
+.DS_Store
+*.swp
+.env
+.env.*
+!.env.example
+app/node_modules/
+app/dist/
+.supabase/
+supabase/.temp/

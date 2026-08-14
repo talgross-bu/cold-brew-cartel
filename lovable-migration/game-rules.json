@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "currency": "USD",
+  "carts": ["A", "B", "C"],
+  "allowedPrices": [3, 4],
+  "costs": {
+    "fixed": 55,
+    "marginalPerCup": 1,
+    "profitFormula": "(price - marginalPerCup) * quantity - fixed"
+  },
+  "quantityRules": [
+    { "lowPriceCount": 0, "lowPriceQuantity": null, "highPriceQuantity": 30 },
+    { "lowPriceCount": 1, "lowPriceQuantity": 55, "highPriceQuantity": 20 },
+    { "lowPriceCount": 2, "lowPriceQuantity": 45, "highPriceQuantity": 10 },
+    { "lowPriceCount": 3, "lowPriceQuantity": 35, "highPriceQuantity": null }
+  ],
+  "outcomeCopy": [
+    {
+      "lowPriceCount": 0,
+      "stamp": "The agreement held",
+      "title": "All three held the line.",
+      "subtitle": "The lunch crowd split evenly. Every cart kept a healthy margin."
+    },
+    {
+      "lowPriceCount": 1,
+      "stamp": "Someone broke ranks",
+      "title": "One cart grabbed the crowd.",
+      "subtitle": "A single $3 price pulled customers away from both $4 rivals."
+    },
+    {
+      "lowPriceCount": 2,
+      "stamp": "Price war begins",
+      "title": "Two carts undercut.",
+      "subtitle": "The last $4 cart was stranded while the discounters split the bargain hunters."
+    },
+    {
+      "lowPriceCount": 3,
+      "stamp": "The price war wins",
+      "title": "Everyone undercut.",
+      "subtitle": "No cart gained market share—and everyone kept the thinner margin."
+    }
+  ],
+  "expectedOutcomes": [
+    {
+      "prices": { "A": 3, "B": 3, "C": 3 },
+      "quantities": { "A": 35, "B": 35, "C": 35 },
+      "revenue": { "A": 105, "B": 105, "C": 105 },
+      "cost": { "A": 90, "B": 90, "C": 90 },
+      "profit": { "A": 15, "B": 15, "C": 15 },
+      "totalProfit": 45
+    },
+    {
+      "prices": { "A": 3, "B": 3, "C": 4 },
+      "quantities": { "A": 45, "B": 45, "C": 10 },
+      "revenue": { "A": 135, "B": 135, "C": 40 },
+      "cost": { "A": 100, "B": 100, "C": 65 },
+      "profit": { "A": 35, "B": 35, "C": -25 },
+      "totalProfit": 45
+    },
+    {
+      "prices": { "A": 3, "B": 4, "C": 3 },
+      "quantities": { "A": 45, "B": 10, "C": 45 },
+      "revenue": { "A": 135, "B": 40, "C": 135 },
+      "cost": { "A": 100, "B": 65, "C": 100 },
+      "profit": { "A": 35, "B": -25, "C": 35 },
+      "totalProfit": 45
+    },
+    {
+      "prices": { "A": 3, "B": 4, "C": 4 },
+      "quantities": { "A": 55, "B": 20, "C": 20 },
+      "revenue": { "A": 165, "B": 80, "C": 80 },
+      "cost": { "A": 110, "B": 75, "C": 75 },
+      "profit": { "A": 55, "B": 5, "C": 5 },
+      "totalProfit": 65
+    },
+    {
+      "prices": { "A": 4, "B": 3, "C": 3 },
+      "quantities": { "A": 10, "B": 45, "C": 45 },
+      "revenue": { "A": 40, "B": 135, "C": 135 },
+      "cost": { "A": 65, "B": 100, "C": 100 },
+      "profit": { "A": -25, "B": 35, "C": 35 },
+      "totalProfit": 45
+    },
+    {
+      "prices": { "A": 4, "B": 3, "C": 4 },
+      "quantities": { "A": 20, "B": 55, "C": 20 },
+      "revenue": { "A": 80, "B": 165, "C": 80 },
+      "cost": { "A": 75, "B": 110, "C": 75 },
+      "profit": { "A": 5, "B": 55, "C": 5 },
+      "totalProfit": 65
+    },
+    {
+      "prices": { "A": 4, "B": 4, "C": 3 },
+      "quantities": { "A": 20, "B": 20, "C": 55 },
+      "revenue": { "A": 80, "B": 80, "C": 165 },
+      "cost": { "A": 75, "B": 75, "C": 110 },
+      "profit": { "A": 5, "B": 5, "C": 55 },
+      "totalProfit": 65
+    },
+    {
+      "prices": { "A": 4, "B": 4, "C": 4 },
+      "quantities": { "A": 30, "B": 30, "C": 30 },
+      "revenue": { "A": 120, "B": 120, "C": 120 },
+      "cost": { "A": 85, "B": 85, "C": 85 },
+      "profit": { "A": 35, "B": 35, "C": 35 },
+      "totalProfit": 105
+    }
+  ],
+  "dominanceTable": [
+    { "rivalsCharging3": 0, "choose4Profit": 35, "choose3Profit": 55, "gainFrom3": 20 },
+    { "rivalsCharging3": 1, "choose4Profit": 5, "choose3Profit": 35, "gainFrom3": 30 },
+    { "rivalsCharging3": 2, "choose4Profit": -25, "choose3Profit": 15, "gainFrom3": 40 }
+  ]
+}
+
